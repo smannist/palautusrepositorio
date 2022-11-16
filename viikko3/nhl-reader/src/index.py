@@ -16,8 +16,10 @@ def main():
                 player_dict["assists"]
                 )
             players.append(player)
+    
+    players = sorted(players, key=lambda player: player.points, reverse=True)
 
-    print("\nPlayers from Finland: \n")
+    print("\nPlayers from Finland:\n")
 
     for player in players:
         print(player)
