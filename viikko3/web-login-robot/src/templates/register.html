@@ -1,22 +1,15 @@
-{% extends "layout.html" %}
-
-{% block title %}
-Register
-{% endblock %}
-
-{% block body %}
+{% extends "layout.html" %} {% block title %} Register {% endblock %} {% block
+body %}
 <h1>Register</h1>
 
 <form action="/register" method="post">
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <ul>
-      {% for message in messages %}
-        <li>{{ message }}</li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-  {% endwith %}
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
 
   <div>
     <label for="username">Username</label>
@@ -30,12 +23,14 @@ Register
 
   <div>
     <label for="password_confirmation">Password confirmation</label>
-    <input type="password" name="password_confirmation" id="password_confirmation" />
+    <input
+      type="password"
+      name="password_confirmation"
+      id="password_confirmation"
+    />
   </div>
 
-  <button>
-    Register
-  </button>
+  <button>Register</button>
 
   <div>
     <a href="/login">Login</a>
