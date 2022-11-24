@@ -37,5 +37,6 @@ class TestOstoskori(unittest.TestCase):
         self.assertAlmostEqual(self.kori.tavaroita_korissa(), 2)
 
     def test_kahden_saman_tuotteen_lisaamisen_jalkeen_ostoskorin_hinta_on_sama_kuin_kaksi_kertaa_tuotteen_hinta(self):
-        self.kori.lisaa_tuote(self.ostos, 1)
-        self.assertAlmostEqual(self.kori.hinta(), 10)
+        tuote = Tuote("Bugatti Chiron", 3500000)
+        self.kori.lisaa_tuote(tuote, 1)
+        self.assertAlmostEqual(self.kori.hinta(), 7000000)
