@@ -40,3 +40,9 @@ class TestOstoskori(unittest.TestCase):
         tuote = Tuote("Bugatti Chiron", 3500000)
         self.kori.lisaa_tuote(tuote, 1)
         self.assertAlmostEqual(self.kori.hinta(), 7000000)
+
+    def test_yhden_tuotteen_lisaamisen_jalkeen_ostoskori_sisaltaa_yhden_ostoksen(self):
+        maito = Tuote("Maito", 3)
+        self.kori.lisaa_tuote(maito)
+        ostokset = self.kori.ostokset()
+        self.assertAlmostEqual(len(ostokset), 1)
