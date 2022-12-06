@@ -62,7 +62,12 @@ class Kayttoliittyma:
 
     def _suorita_komento(self, komento):
         komento_olio = self._komennot[komento]
-        komento_olio.suorita()
+        self._komennot[Komento.KUMOA] = komento_olio
+
+        if komento == Komento.KUMOA:
+            komento_olio.kumoa()
+        else:
+            komento_olio.suorita()
 
         self._kumoa_painike["state"] = constants.NORMAL
 
